@@ -1,0 +1,12 @@
+services:
+  smtp-telegram:
+    build: .
+    container_name: smtp-telegram
+    environment:
+      - TELEGRAM_BOT_TOKEN=your-bot-token
+      - TELEGRAM_CHAT_ID=your-chat-id
+    ports:
+      - "2525:25"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
